@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://catastor:8080/WebEmpresaApp/EmpresaWebService?wsdl" uri="src/conf/xml-resources/web-service-references/EmpresaWebService/wsdl/catastor_8080/WebEmpresaApp/EmpresaWebService.wsdl"/>
+    <system systemId="http://catastor:8080/WebEmpresaApp/EmpresaWebService?xsd=1" uri="src/conf/xml-resources/web-service-references/EmpresaWebService/wsdl/catastor_8080/WebEmpresaApp/EmpresaWebService.xsd_1.xsd"/>
+    <system systemId="http://catastor:8080/WebEmpresaApp/EmpleadoWebService?wsdl" uri="src/conf/xml-resources/web-service-references/EmpleadoWebService/wsdl/catastor_8080/WebEmpresaApp/EmpleadoWebService.wsdl"/>
+    <system systemId="http://catastor:8080/WebEmpresaApp/EmpleadoWebService?xsd=1" uri="src/conf/xml-resources/web-service-references/EmpleadoWebService/wsdl/catastor_8080/WebEmpresaApp/EmpleadoWebService.xsd_1.xsd"/>
+    <system systemId="http://catastor:8080/WebEmpresaApp/EmpleadoWebService?xsd=2" uri="src/conf/xml-resources/web-service-references/EmpleadoWebService/wsdl/catastor_8080/WebEmpresaApp/EmpleadoWebService.xsd_2.xsd"/>
+</catalog>

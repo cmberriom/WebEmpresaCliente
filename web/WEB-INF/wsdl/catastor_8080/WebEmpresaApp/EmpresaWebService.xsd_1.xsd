@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://webservices.webempresa.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://webservices.webempresa.com/">
+
+<xs:element name="createCompany" type="tns:createCompany"/>
+
+<xs:element name="createCompanyResponse" type="tns:createCompanyResponse"/>
+
+<xs:element name="deleteCompany" type="tns:deleteCompany"/>
+
+<xs:element name="deleteCompanyResponse" type="tns:deleteCompanyResponse"/>
+
+<xs:element name="findCompany" type="tns:findCompany"/>
+
+<xs:element name="findCompanyResponse" type="tns:findCompanyResponse"/>
+
+<xs:element name="listCompanies" type="tns:listCompanies"/>
+
+<xs:element name="listCompaniesResponse" type="tns:listCompaniesResponse"/>
+
+<xs:element name="updateCompany" type="tns:updateCompany"/>
+
+<xs:element name="updateCompanyResponse" type="tns:updateCompanyResponse"/>
+
+<xs:complexType name="deleteCompany">
+<xs:sequence>
+<xs:element name="_empresa" type="tns:empresa" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="empresa">
+<xs:sequence>
+<xs:element name="direccion" type="xs:string" minOccurs="0"/>
+<xs:element name="nit" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="telefono" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteCompanyResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="updateCompany">
+<xs:sequence>
+<xs:element name="_empresa" type="tns:empresa" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateCompanyResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="findCompany">
+<xs:sequence>
+<xs:element name="query" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findCompanyResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:empresa" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createCompany">
+<xs:sequence>
+<xs:element name="_empresa" type="tns:empresa" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createCompanyResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listCompanies">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listCompaniesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:empresa" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

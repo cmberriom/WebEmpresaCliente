@@ -1,0 +1,294 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://webservices.webempresa.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://webservices.webempresa.com/">
+
+<xs:element name="ParseException" type="tns:ParseException"/>
+
+<xs:element name="createEmployee" type="tns:createEmployee"/>
+
+<xs:element name="createEmployeeResponse" type="tns:createEmployeeResponse"/>
+
+<xs:element name="deleteAllEmployees" type="tns:deleteAllEmployees"/>
+
+<xs:element name="deleteAllEmployeesResponse" type="tns:deleteAllEmployeesResponse"/>
+
+<xs:element name="deleteEmployee" type="tns:deleteEmployee"/>
+
+<xs:element name="deleteEmployeeResponse" type="tns:deleteEmployeeResponse"/>
+
+<xs:element name="employeeAnswerPhone" type="tns:employeeAnswerPhone"/>
+
+<xs:element name="employeeAnswerPhoneResponse" type="tns:employeeAnswerPhoneResponse"/>
+
+<xs:element name="employeeAssignTasks" type="tns:employeeAssignTasks"/>
+
+<xs:element name="employeeAssignTasksResponse" type="tns:employeeAssignTasksResponse"/>
+
+<xs:element name="employeeDevelopmentMeeting" type="tns:employeeDevelopmentMeeting"/>
+
+<xs:element name="employeeDevelopmentMeetingResponse" type="tns:employeeDevelopmentMeetingResponse"/>
+
+<xs:element name="employeeDoWork" type="tns:employeeDoWork"/>
+
+<xs:element name="employeeDoWorkResponse" type="tns:employeeDoWorkResponse"/>
+
+<xs:element name="employeeEnterWork" type="tns:employeeEnterWork"/>
+
+<xs:element name="employeeEnterWorkResponse" type="tns:employeeEnterWorkResponse"/>
+
+<xs:element name="employeeExitWork" type="tns:employeeExitWork"/>
+
+<xs:element name="employeeExitWorkResponse" type="tns:employeeExitWorkResponse"/>
+
+<xs:element name="employeeTraining" type="tns:employeeTraining"/>
+
+<xs:element name="employeeTrainingResponse" type="tns:employeeTrainingResponse"/>
+
+<xs:element name="findEmployee" type="tns:findEmployee"/>
+
+<xs:element name="findEmployeeResponse" type="tns:findEmployeeResponse"/>
+
+<xs:element name="generateEmployeeByType" type="tns:generateEmployeeByType"/>
+
+<xs:element name="generateEmployeeByTypeResponse" type="tns:generateEmployeeByTypeResponse"/>
+
+<xs:element name="listEmployees" type="tns:listEmployees"/>
+
+<xs:element name="listEmployeesResponse" type="tns:listEmployeesResponse"/>
+
+<xs:element name="raiseSalaries" type="tns:raiseSalaries"/>
+
+<xs:element name="raiseSalariesResponse" type="tns:raiseSalariesResponse"/>
+
+<xs:element name="updateEmployee" type="tns:updateEmployee"/>
+
+<xs:element name="updateEmployeeResponse" type="tns:updateEmployeeResponse"/>
+
+<xs:complexType name="desarrollador">
+<xs:complexContent>
+<xs:extension base="tns:empleado">
+<xs:sequence>
+<xs:element name="nivel" type="xs:string" minOccurs="0"/>
+<xs:element name="proyecto" type="tns:proyecto" minOccurs="0"/>
+<xs:element name="tarjetaProfesional" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="empleado" abstract="true">
+<xs:sequence>
+<xs:element name="activo" type="xs:boolean"/>
+<xs:element name="apellidos" type="xs:string" minOccurs="0"/>
+<xs:element name="cedula" type="xs:long"/>
+<xs:element name="companyNIT" type="xs:string" minOccurs="0"/>
+<xs:element name="experiencia" type="xs:double"/>
+<xs:element name="job" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="salario" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="proyecto">
+<xs:sequence>
+<xs:element name="numeroProyecto" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="recepcionista">
+<xs:complexContent>
+<xs:extension base="tns:empleado">
+<xs:sequence>
+<xs:element name="aniosExperiencia" type="xs:long"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="gerente">
+<xs:complexContent>
+<xs:extension base="tns:empleado">
+<xs:sequence>
+<xs:element name="titulo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="employeeDevelopmentMeeting">
+<xs:sequence>
+<xs:element name="_empleado" type="tns:empleado" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="employeeDevelopmentMeetingResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findEmployee">
+<xs:sequence>
+<xs:element name="query" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findEmployeeResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:empleado" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="raiseSalaries">
+<xs:sequence>
+<xs:element name="_empleado" type="tns:empleado" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="raiseSalariesResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteEmployee">
+<xs:sequence>
+<xs:element name="_empleado" type="tns:empleado" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteEmployeeResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listEmployees">
+<xs:sequence>
+<xs:element name="query" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listEmployeesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:empleado" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateEmployee">
+<xs:sequence>
+<xs:element name="_empleado" type="tns:empleado" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateEmployeeResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="employeeExitWork">
+<xs:sequence>
+<xs:element name="_empleado" type="tns:empleado" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="employeeExitWorkResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createEmployee">
+<xs:sequence>
+<xs:element name="_empleado" type="tns:empleado" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createEmployeeResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="ParseException">
+<xs:sequence>
+<xs:element name="errorOffset" type="xs:int"/>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="employeeAssignTasks">
+<xs:sequence>
+<xs:element name="_empleado" type="tns:empleado" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="employeeAssignTasksResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="employeeAnswerPhone">
+<xs:sequence>
+<xs:element name="_empleado" type="tns:empleado" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="employeeAnswerPhoneResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="generateEmployeeByType">
+<xs:sequence>
+<xs:element name="arg0" type="tns:empleado" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="generateEmployeeByTypeResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:empleado" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="employeeDoWork">
+<xs:sequence>
+<xs:element name="_empleado" type="tns:empleado" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="employeeDoWorkResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="employeeTraining">
+<xs:sequence>
+<xs:element name="_empleado" type="tns:empleado" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="employeeTrainingResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="employeeEnterWork">
+<xs:sequence>
+<xs:element name="_empleado" type="tns:empleado" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="employeeEnterWorkResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteAllEmployees">
+<xs:sequence>
+<xs:element name="query" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteAllEmployeesResponse">
+<xs:sequence/>
+</xs:complexType>
+</xs:schema>
